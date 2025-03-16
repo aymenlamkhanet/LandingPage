@@ -2,6 +2,7 @@
 
 import "./Projects.css";
 import project2 from "./images/project2.jpg";
+import project5 from "./images/project5.png";
 import project3 from "./images/project3.jpg";
 import project1 from "./images/project1.png";
 import project4 from "./images/project4.jpg";
@@ -19,6 +20,13 @@ const Projects = () => {
       description:
         "Application web complète de gestion de réservations avec tableau de bord administrateur",
       image: project1,
+    },
+    {
+      title: "Potfolio",
+      tech: ["ReactJs", "Css"],
+      description:
+        "Portfolio",
+      image: project5,
     },
     {
       title: "Système de Location des Voitures",

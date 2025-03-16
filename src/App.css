@@ -1,41 +1,200 @@
-.App {
+/* App.css - Base Styles */
+:root {
+  --primary: #2d2e32;
+  --secondary: #4facfe;
+  --light: #f8f9fa;
+  --dark: #1a1b1f;
+  --border: #e9ecef;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--primary);
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  padding: 8rem 2rem 4rem;
   text-align: center;
+  background: var(--light);
+  border-bottom: 1px solid var(--border);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-  margin-left: 40px;
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hero h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--primary);
+  margin-bottom: 2rem;
 }
 
+.hero-subtitle {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: #666;
+}
 
+/* Education Timeline */
+.education-container {
+  padding: 4rem 2rem;
+  background: white;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.education-timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding-left: 2rem;
+  border-left: 2px solid var(--secondary);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: var(--light);
+  border-radius: 8px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.4rem;
+  top: 1.8rem;
+  width: 1rem;
+  height: 1rem;
+  background: var(--secondary);
+  border-radius: 50%;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 2rem;
+}
+
+.project-card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.tech-stack {
   display: flex;
-  flex-direction: column;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.tech-stack span {
+  background: var(--light);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+}
+
+/* Skills Matrix */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.skill-category {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skill-item {
+  padding: 0.4rem 1rem;
+  background: var(--light);
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Certifications */
+.certifications-list {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.certification-item {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-primary:hover {
+  background: var(--dark);
+  transform: translateY(-2px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn-secondary {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 1rem 3rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .education-timeline {
+    padding-left: 1rem;
+  }
+
+  .timeline-item::before {
+    left: -1.7rem;
   }
 }
